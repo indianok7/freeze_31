@@ -63,7 +63,23 @@ and open the template in the editor.
                             <li>
 
                                 <select class="dropdown" name="listaProduto">
-                                    <option></option>
+                                <?php
+                                include "conexao_bd.php";
+                                $sql = "SELECT * FROM produto ORDER BY descricao";
+                                $dados = retornarDados($sql);
+
+                                while($linha = mysqli_fetch_assoc($dados))
+                                {
+                                ?>   
+                                
+                                    <option>
+                                        <?php
+                                            echo $linha["descricao"];
+                                        ?>
+                                    </option>
+                                <?php
+                                }
+                                ?>
                                 </select>
                             </li>
                             <li>
@@ -81,7 +97,23 @@ and open the template in the editor.
                             <li>
 
                                 <select name="listaFormaPagamento"  class="dropdown">
-                                    <option></option>
+                                <?php
+                                include "conexao_bd.php";
+                                $sql = "SELECT * FROM produto ORDER BY descricao";
+                                $dados = retornarDados($sql);
+
+                                while($linha = mysqli_fetch_assoc($dados))
+                                {
+                                ?>   
+                                
+                                    <option>
+                                        <?php
+                                            echo $linha["descricao"];
+                                        ?>
+                                    </option>
+                                <?php
+                                }
+                                ?>
 
                                 </select>
 
